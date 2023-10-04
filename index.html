@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-3 mt-5">
+                <div id="output1"></div>
+                <div class="card text-bg-dark">
+                    <div class="card-header bg-warning">Calculator</div>
+                    <div class="card-body">
+                        <label for="name" class="form-label">Enter Number</label>
+                        <input type="number" class="form-control" id="n1" placeholder="Enter Number">
+                        <br>
+                        <label for="name" class="form-label">Enter Number</label>
+                        <input type="number" class="form-control" id="n2" placeholder="Enter Number">
+                        <br>
+                        <div class="btn-group w-100" role="group">
+                            <button type="button" onclick="calculater(`+`)" class="btn btn-outline-secondary">+</button>
+                            <button type="button" onclick="calculater(`-`)" class="btn btn-outline-danger">-</button>
+                            <button type="button" onclick="calculater(`*`)" class="btn btn-outline-success">*</button>
+                            <button type="button" onclick="calculater(`/`)" class="btn btn-outline-warning">/</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+
+        function calculater(op) {
+            let inp1 = +document.querySelector("#n1").value
+            let inp2 = +document.querySelector("#n2").value
+
+            if (op === "+") {
+                document.querySelector("#output1").innerHTML = `<div class="alert alert-success">Addition = ${inp1 + inp2}</div>`
+
+            } else if (op === `-`) {
+                document.querySelector("#output1").innerHTML = `<div class="alert alert-success">substration = ${inp1 - inp2}</div>`
+
+            } else if (op === `*`) {
+                document.querySelector("#output1").innerHTML = `<div class="alert alert-success">substration = ${inp1 * inp2}</div>`
+
+            } else if (op === `/`) {
+                document.querySelector("#output1").innerHTML = `<div class="alert alert-success">substration = ${inp1 / inp2}</div>`
+
+            }
+        }
+    </script>
+</body>
+
+</html>
